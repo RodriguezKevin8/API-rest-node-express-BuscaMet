@@ -1,4 +1,5 @@
 import express from "express";
+import morgan from "morgan";
 import Login from "./Route/Login.route.js";
 import Ofert from "./Route/Ofert.route.js";
 import Commet from "./Route/Comment.route.js";
@@ -7,6 +8,7 @@ import { authMiddleware } from "./Route/authMiddleware.js";
 import cors from "cors";
 
 const app = express();
+app.use(morgan("combined"));
 app.use(express.json());
 app.use(cors());
 
